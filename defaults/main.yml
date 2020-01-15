@@ -14,7 +14,8 @@ mw_installer_folder: "{{ oracle_base }}/installer"
 domain_name: WLSDomain
 domain_home: "{{ domain_base }}/user_projects/domains/{{ domain_name }}"
 
-identity_keystore_path: "{{ oracle_base }}/certs"
+# oracle_base seems to be /opt/oracle/12213 for the admin server (incorrect) and /opt/oracle for the managed servers (correct)
+# identity_keystore_path: "/opt/oracle/certs"
 identity_keystore_file: "{{ identity_keystore_path }}/identity.jks"
 
 nodemanager_home: "{{ domain_home }}/nodemanager"
