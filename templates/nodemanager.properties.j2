@@ -1,13 +1,13 @@
 DomainsFile={{ domain_home }}/nodemanager/nodemanager.domains
 LogLimit=0
-PropertiesVersion=12.2.1
+PropertiesVersion=12.2.1.3.0
 AuthenticationEnabled=true
 NodeManagerHome={{ domain_home }}/nodemanager
 JavaHome={{ java_home }}
 LogLevel=INFO
 DomainsFileEnabled=true
 StartScriptName=startWebLogic.sh
-ListenAddress={{ ansible_fqdn }}
+ListenAddress={{ ansible_nodename }}
 NativeVersionEnabled=true
 ListenPort=5556
 LogToStderr=true
@@ -27,6 +27,8 @@ KeyStores=CustomIdentityAndJavaStandardTrust
 CustomIdentityKeystoreType=JKS
 CustomIdentityKeyStoreFileName={{ identity_keystore_file }}
 CustomIdentityKeyStorePassPhrase={{ keystore_password }}
-CustomIdentityAlias={{ ansible_fqdn }}
+CustomIdentityAlias={{ ansible_nodename }}
 CustomIdentityPrivateKeyPassPhrase={{ keystore_password }}
-CipherSuite=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
+CipherSuites=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
+
+
